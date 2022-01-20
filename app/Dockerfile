@@ -4,4 +4,3 @@ WORKDIR app
 RUN /bin/sh -c 'pip install --no-cache-dir --index-url https://nexus.dev.afsmtddso.com/repository/eaddy-nettey-nexus-repo/simple -r requirements.txt'
 ENTRYPOINT ["python"]
 CMD ["server.py"]
-

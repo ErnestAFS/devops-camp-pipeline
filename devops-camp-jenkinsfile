@@ -22,8 +22,8 @@ pipeline {
             }
         }
         stage('Application docker build') {
-                echo "Building application image"
             steps {
+                echo "Building application image"
                 withCredentials([usernameColonPassword(credentialsId: 'eaddy-nettey-harbor-auth', variable: 'HARBOR-AUTH')]) {
                     script {
                         docker.build('$APP_IMAGE_NAME-$COMMIT_HASH', '-f ./app/Dockerfile ./afs-labs-student')
